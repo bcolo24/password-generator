@@ -4,13 +4,14 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-
-
 function generatePassword() {  
+
   var NumofChar = prompt("How many characters between 8-128 would you like in your password?");
+
   if (NumofChar < 8 || NumofChar > 128) {
     alert("Please enter a number between 8 and 128.");
   }
+  
   else {
     var RandomUpper = confirm("Do you want uppercase letters in your password?");
     var RandomLower = confirm("Do you want lowercase letters in your password?"); 
@@ -29,7 +30,7 @@ function generatePassword() {
 
   function getRandomLower() {
     String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-    return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    // return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
   }
 
  if (RandomLower) {
@@ -38,16 +39,20 @@ function generatePassword() {
 
   function getRandomNumber() {
      String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-     return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+    //  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
   
   if (RandomNumber) {
     return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-    } 
-  function getRandomSymbol() {
-    const symbol = ".@#$%^&*()<>?/-+=!,";
   }
 
+  function getRandomSymbol() {
+    constsymbol = ".@#$%^&*()<>?/-+=!,";
+  }
+
+  if (RandomSymbol) {
+    return constsymbol = ".@#$%^&*()<>?/-+=!,";
+  }
   // console.log("Hey! You clicked the button!");
 return password
 
