@@ -4,9 +4,24 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+var CharArr = [];
+
+var UppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var UpperCharArr = UppercaseLetters.split("");
+
+var LowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+var LowerCharArr = LowercaseLetters.split("");
+
+var Numbers = '1234567890';
+var NumbersArr = Numbers.split("");
+
+var Symbols = '!@#$%^&*()_-+=<>?/';
+var SymbolsArr = Symbols.split("");
+
 function generatePassword() {  
 
-  var NumofChar = prompt("How many characters between 8-128 would you like in your password?");
+  var NumofChar = parseInt(prompt("How many characters between 8-128 would you like in your password?"));
+  var passwordArr = []
 
   if (NumofChar < 8 || NumofChar > 128) {
     alert("Please enter a number between 8 and 128.");
@@ -19,42 +34,32 @@ function generatePassword() {
     var RandomSymbol = confirm("Do you want symbols in your password?");
   }
 
-  function getRandomUpper() {
-    String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-    // return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  if (RandomUpper){
+    CharArr = CharArr.push(UpperCharArr);
   }
 
-  if (RandomUpper) {
-   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-  } 
-
-  function getRandomLower() {
-    String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-    // return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-  }
+  // if (RandomUpper) {
+  //   var RandomUp = String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+  //  return RandomUp
+  // } 
 
  if (RandomLower) {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+  CharArr = CharArr.push(LowerCharArr);
+  //return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
   } 
 
-  function getRandomNumber() {
-     String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-    //  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-  }
   
   if (RandomNumber) {
-    return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+    CharArr = CharArr.push(NumbersArr);
+    return //String.fromCharCode(Math.floor(Math.random() * 10) + 48);
   }
 
-  function getRandomSymbol() {
-    constsymbol = ".@#$%^&*()<>?/-+=!,";
-  }
 
   if (RandomSymbol) {
-    return constsymbol = ".@#$%^&*()<>?/-+=!,";
+    CharArr = CharArr.push(SymbolsArr);
+    return //constsymbol = ".@#$%^&*()<>?/-+=!,";
   }
   // console.log("Hey! You clicked the button!");
-return password
 
 // everything will go here! 
 // 1. Prompt the user for the password criteria
@@ -68,6 +73,12 @@ return password
 }
 
 // Write password to the #password input
+
+for (var i = 0; i < NumofChar; i++) {
+  var chosenChar = (Math.floor(Math.random() * NumofChar));
+  passwordArr.push(chosenChar)
+}
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
