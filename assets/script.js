@@ -56,6 +56,8 @@ function generatePassword() {
   for (var i = 0; i < NumofChar; i++) {
    var randomIndex =  Math.floor(Math.random() * CharArr.length);
     password += CharArr[randomIndex];
+  // var chosenChar = (Math.floor(Math.random() * NumofChar));
+  // passwordArr.concat(chosenChar);
   }
 
   return password;
