@@ -1,10 +1,10 @@
 // Assignment code here
 
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-var CharArr = [];
 
+//Defining variables
+var CharArr = [];
 
 var UppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var UpperCharArr = UppercaseLetters.split("");
@@ -18,8 +18,10 @@ var NumbersArr = Numbers.split("");
 var Symbols = '!@#$%^&*()_-+=<>?/';
 var SymbolsArr = Symbols.split("");
 
+//Declaring the function 
 function generatePassword() {  
-  
+
+  //prompting the user to enter desired password length
   var NumofChar = parseInt(prompt("How many characters between 8 and 128 would you like in your password?"));
   var password = "";
 
@@ -36,6 +38,7 @@ function generatePassword() {
 
   CharArr = [];
 
+//adding selected characters to the string
   if (RandomUpper){
     CharArr = CharArr.concat(UpperCharArr);
   }
@@ -52,7 +55,7 @@ function generatePassword() {
     CharArr = CharArr.concat(SymbolsArr);
   }
 
-
+//finalizing password and returning to user
   for (var i = 0; i < NumofChar; i++) {
    var randomIndex =  Math.floor(Math.random() * CharArr.length);
     password += CharArr[randomIndex];
@@ -60,7 +63,6 @@ function generatePassword() {
 
   return password;
 }
-
 
 // Write password to the #password input
 function writePassword() {
